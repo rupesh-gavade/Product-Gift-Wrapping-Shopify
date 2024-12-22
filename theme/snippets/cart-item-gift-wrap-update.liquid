@@ -1,0 +1,70 @@
+<cart-item-gift-wrapper data-line="{{ index }}" data-product-id="{{ item.product.id }}">
+  <div class="tw-p-1 ">
+    <div class="tw-flex tw-items-center tw-gap-x-1">
+      <input
+        type="checkbox"
+        checked
+        name="wrapper-checkbox"
+        id="wrapper-checkbox-{{index}}"
+        data-gift-id="{{ settings.gift_wrap_product.first_available_variant.id }}"
+        class="!tw-w-6 !tw-h-6 tw-accent-black"
+      >
+      <label for="wrapper-checkbox-{{index}}" class="tw-font-medium tw-text-gray-800 tw-w-max tw-whitespace-nowrap">{{- settings.gift_wrap_message -}}</label>
+      <div class="wrapper-accordion-toggler tw-w-full">
+        <div class="wrapper-edit tw-flex tw-items-center tw-gap-x-1 tw-justify-end tw-cursor-pointer">
+          <span class="tw-underline tw-underline-offset-4">Edit</span> {{- 'icon-edit.svg' | inline_asset_content -}}
+        </div>
+        <div class="wrapper-close hidden tw-flex tw-gap-x-1 tw-items-center tw-cursor-pointer tw-justify-end">
+          <span class="tw-underline tw-underline-offset-4">Cancel</span> {{- 'icon-close-small.svg' | inline_asset_content -}}
+        </div>
+      </div>
+    </div>
+    <div class="tw-mt-2 ">
+      <p class="wrapper-info tw-text-gray-600 ">
+        To: {{ item.properties.gift_to }} / From: {{ item.properties.gift_from }} / Message: "{{ item.properties.gift_massage }}"
+      </p>
+    </div>
+  </div>
+  <div class="form-group hidden tw-mb-4 ">
+    <!-- Grouped Inputs -->
+    <div class="tw-space-y-4">
+      <div class="tw-space-y-2">
+        <label for="wrapper-to" class="tw-font-medium tw-text-gray-700">To</label>
+        <input
+          type="text"
+          name="wrapper-to"
+          maxlength="{{ settings.gift_wrap_to_max_length }}"
+          placeholder="Enter recipient's name"
+          value="{{ item.properties.gift_to }}"
+          class="tw-w-full tw-p-2 tw-font-medium tw-border tw-border-gray-300 tw-rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+
+      <div class="tw-space-y-2">
+        <label for="wrapper-from" class="tw-font-medium tw-text-gray-700">From</label>
+        <input
+          type="text"
+          maxlength="{{ settings.gift_wrap_from_max_length }}"
+          name="wrapper-from"
+          placeholder="Enter your name"
+          value="{{ item.properties.gift_from }}"
+          class="tw-w-full tw-p-2 tw-font-medium tw-border tw-border-gray-300 tw-rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+
+      <div class="tw-space-y-2">
+        <label for="wrapper-message" class="tw-font-medium tw-text-gray-700">Gift Wrap Message:</label>
+        <textarea
+          name="wrapper-message"
+          rows="4"
+          placeholder="Enter a gift message"
+          maxlength="{{ settings.gift_wrap_message_max_length }}"
+          class="tw-w-full tw-p-2 tw-font-medium tw-border tw-border-gray-300 tw-rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >{{ item.properties.gift_massage }}</textarea>
+      </div>
+    </div>
+    <span class="button update-wrapper-info tw-w-full tw-bg-black tw-text-white tw-px-4 tw-py-2 tw-rounded-md tw-cursor-pointer">
+      Update
+    </span>
+  </div>
+</cart-item-gift-wrapper>

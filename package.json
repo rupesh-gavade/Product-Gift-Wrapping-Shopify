@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "tailwind":"npx tailwindcss -i ./tailwind-global.css -o ./theme/assets/tailwind.css --watch"
+     }
+}

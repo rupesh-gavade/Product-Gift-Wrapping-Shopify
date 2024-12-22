@@ -1474,28 +1474,6 @@
       "content": "Gift Wrap Feature Settings"
     },
     {
-      "type": "checkbox",
-      "id": "gift_wrap_product_page",
-      "label": "Enable Gift Wrap on Product Page",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "gift_wrap_cart_drawer",
-      "label": "Enable Gift Wrap on Cart Drawer",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "gift_wrap_cart_page",
-      "label": "Enable Gift Wrap on Cart Page",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "Gift Product Selection"
-    },
-    {
       "type": "product",
       "id": "gift_wrap_product",
       "label": "Select Gift Wrap Product",
@@ -1507,6 +1485,47 @@
       "label": "Gift Wrap Message",
       "info": "Enter a custom message to be displayed with the gift wrap checkbox."
     },
+    {
+      "type": "checkbox",
+      "id": "gift_wrap_product_page",
+      "label": "Enable Gift Wrap on Product Page",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "gift_wrap_product_page_color_scheme",
+      "label": "Color schema for product page",
+      "info": "Set the bacground color for gift wrapper from on the product page"
+    },
+    {
+      "type": "checkbox",
+      "id": "gift_wrap_cart_drawer",
+      "label": "Enable Gift Wrap on Cart Drawer",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "gift_wrap_cart_drawer_color_scheme",
+      "label": "Color schema for Cart Drawer",
+      "info": "Set the bacground color for gift wrapper from on the Cart Drawer"
+    },
+    {
+      "type": "checkbox",
+      "id": "gift_wrap_cart_page",
+      "label": "Enable Gift Wrap on Cart Page",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "gift_wrap_cart_page_color_scheme",
+      "label": "Color schema for Cart page",
+      "info": "Set the bacground color for gift wrapper from on the Cart page"
+    },
+    {
+      "type": "header",
+      "content": "Gift Product Selection"
+    },
+
     {
       "type": "header",
       "content": "Gift Wrap Message Length Thresholds"

@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "current": {
     "logo_width": 90,
     "type_header_font": "assistant_n4",
@@ -126,10 +126,11 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "gift_wrap_product": "gift-wrap",
+    "gift_wrap_message": "Wrap as a gift?",
     "gift_wrap_product_page": true,
     "gift_wrap_cart_drawer": true,
-    "gift_wrap_product": "gift-wrap",
-    "gift_wrap_message": "add this producr 12",
+    "gift_wrap_cart_drawer_color_scheme": "scheme-3",
     "gift_wrap_to_max_length": 10,
     "gift_wrap_from_max_length": 10,
     "gift_wrap_message_max_length": 50,
@@ -173,10 +174,10 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#242833",
+          "background": "#d2d2d2",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
+          "text": "#121212",
+          "button": "#121212",
           "button_label": "#000000",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"

@@ -5,11 +5,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {
-      display: ['group-active'],
-      visibility: ['group-active'],
-    },
-  },
   plugins: [],
 }

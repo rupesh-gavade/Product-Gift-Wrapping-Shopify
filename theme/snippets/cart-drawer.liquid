@@ -124,7 +124,7 @@
                          {% assign has_gift_wrapper = 'flase' %}
                       {% endif %}
                   
-                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}"  class="cart-item" role="row">
+                      <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}"  class="cart-item {% if item.product.id == settings.gift_wrap_product.id %} !tw-hidden  {% endif %}" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -428,7 +428,7 @@
                         </td>
 
                          {% if  settings.gift_wrap_product_page and item.properties.gift_wrapp %}
-                           <td class="cart-item-gift-wrap tw-col-start-1 tw-col-end-5 !tw-p-5 tw-bg-[#e9e9e9]" role="row">
+                           <td class="cart-item-gift-wrap tw-col-start-1 tw-col-end-5 !tw-p-5  color-{{ settings.gift_wrap_cart_drawer_color_scheme  }}" role="row">
                              {% render 'cart-item-gift-wrap-update', item:item  , index:forloop.index%}
                            </td>
                           {% endif %}

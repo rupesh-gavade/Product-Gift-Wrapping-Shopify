@@ -1,0 +1,58 @@
+{% comment %}
+ Renders gift wrapper input feilds
+  Usage:
+    {% render 'product-gift-wrap', color_schema: section.settings.show_vendor %}
+{% endcomment %}
+
+
+{% if settings.gift_wrap_product_page and product.tags contains 'Gift-wrapper' %}
+
+<div class="product-gift--wrapper tw-py-10 tw-group gradient color-{{ settings.gift_wrap_product_page_color_scheme }}"> 
+   <div class="tw-flex tw-items-center tw-justify-between">
+    <div class="tw-flex  tw-items-center tw-gap-2">
+        <input 
+            id="wrapper-checkbox" 
+            type="checkbox" 
+            class="!tw-w-6 !tw-h-6 tw-accent-black "
+            data-gift-id="{{ settings.gift_wrap_product.first_available_variant.id }}"
+          >
+           
+          <label for="wrapper-checkbox" class="tw-font-medium tw-cursor-pointer ">{{- settings.gift_wrap_message -}}</label>
+    </div>
+      <div class="tw-flex tw-justify-end tw-items-center tw-gap-2">
+        <div class="!tw-block tw-w-4 tw-h-4 tw-bg-orange-400 tw-rounded-full tw-animate-pulse"></div>
+        <span class="tw-grow tw-text-orange-400"> Only {{ settings.gift_wrap_product.selected_or_first_available_variant.inventory_quantity }} left! </span>
+      </div>
+   </div>
+
+     <div class="wrapper-inputs--container tw-py-8 tw-hidden group-has-[:checked]:tw-block">
+        <label for="gift-wrapper-to" class=" tw-border-gray-300">To</label>
+        <input 
+          type="text" 
+          id="gift-wrapper-to" 
+          maxlength="{{ settings.gift_wrap_to_max_length }}" 
+          placeholder="Enter recipient's name" 
+          required
+          class="tw-w-full tw-my-4 tw-p-2 tw-font-medium tw-border  tw-focus-within:tw-outline-none tw-border-gray-300 tw-rounded-md  focus:outline-none"
+        >
+        <label for="gift-wrapper-from" class="tw-font-medium ">From</label>
+        <input 
+            type="text" 
+            id="gift-wrapper-from" 
+            maxlength="{{ settings.gift_wrap_from_max_length }}" 
+            placeholder="Enter your name" 
+            required
+            class="tw-w-full tw-my-4 tw-p-2 tw-border tw-border-gray-300 tw-focus-within:tw-outline-none tw-rounded-md  focus:outline-none"
+        >
+        <label for="gift-wrappper-message" class="tw-font-medium">Gift Wrap Message:</label>
+        <textarea 
+            id="gift-wrappper-message" 
+            rows="4" 
+            maxlength="{{ settings.gift_wrap_message_max_length }}" 
+            placeholder="Enter a gift message" 
+            required
+            class="tw-w-full tw-my-4 tw-focus-within:tw-outline-none tw-p-2 tw-border tw-border-gray-300 tw-rounded-md focus:outline-none"
+        ></textarea>
+     </div>
+    </div>
+  {% endif %}

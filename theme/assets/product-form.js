@@ -12,21 +12,15 @@ if (!customElements.get('product-form')) {
         this.submitButton = this.querySelector('[type="submit"]');
         this.submitButtonText = this.submitButton.querySelector('span');
 
-        // gift wrap variabls 
-        
-        this.checkbox = this.querySelector('#gift-wrap-checkbox');
-        this.formGroup = this.querySelector('.form-group');
-
-        this.giftWrapCheckbox = this.querySelector('#gift-wrap-checkbox');
-        this.giftWrapFrom = this.querySelector('#gift-wrap-from');
-        this.giftWrapTo = this.querySelector('#gift-wrap-to');
-        this.giftWrapMassage = this.querySelector('#gift-wrap-message');
+        // gift wrap inpu variabls 
+        this.giftWrapCheckbox = this.querySelector('#wrapper-checkbox');
+        this.giftWrapFrom = this.querySelector('#gift-wrapper-from');
+        this.giftWrapTo = this.querySelector('#gift-wrapper-to');
+        this.giftWrapMassage = this.querySelector('#gift-wrappper-message');
 
         if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
 
         this.hideErrors = this.dataset.hideErrors === 'true';
-
-        if (this.checkbox) this.checkbox.addEventListener('change', () => this.toggleGiftWrapCheckbox());
 
       }
 
@@ -157,13 +151,6 @@ if (!customElements.get('product-form')) {
           this.submitButton.removeAttribute('disabled');
           this.submitButtonText.textContent = window.variantStrings.addToCart;
         }
-      }
-
-      toggleGiftWrapCheckbox(){
-        if (this.checkbox) {
-          this.formGroup.classList.toggle('hidden')
-        }
-          
       }
 
       get variantIdInput() {

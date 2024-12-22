@@ -5,13 +5,12 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      if (this.dataset.hasWrapper) {
+      if (this.dataset.hasWrapper == 'true') {
         cartItems.updateQuantity(this.dataset.index, 0 , this.dataset.productId );
       }
       else{
         cartItems.updateQuantity(this.dataset.index, 0  );
-      }
-        
+      } 
       
     });
   }
@@ -318,8 +317,6 @@ class CartItems extends HTMLElement {
 customElements.define('cart-items', CartItems);
 
 
-
-
 class CartItemGiftUpdate extends HTMLElement {
   constructor() {
     super();
@@ -333,10 +330,6 @@ class CartItemGiftUpdate extends HTMLElement {
     this.updateButton = this.querySelector('.update-wrapper-info');
     this.checkBox = this.querySelector('input[name="wrapper-checkbox"]');
 
-    this.wrppaerInfoToggler = this.querySelector('.wrapper-accordion-toggler');
-    this.wrapperEditButton = this.querySelector('.wrapper-edit');
-    this.wrapperCloseButton = this.querySelector('.wrapper-close');
-    this.wrapperFormGroup = this.querySelector('.form-group')
 
     this.handleCheckboxChnage = this.handleCheckboxChnage.bind(this);
     this.checkBox.addEventListener('change', this.handleCheckboxChnage);  // Fixed this line
@@ -344,8 +337,6 @@ class CartItemGiftUpdate extends HTMLElement {
     this.handleUpdateButtonClick = this.handleUpdateButtonClick.bind(this);
     this.updateButton.addEventListener('click', this.handleUpdateButtonClick);
     
-   this.handleWrapperInfoToggle = this.handleWrapperInfoToggle.bind(this);
-    this.wrppaerInfoToggler.addEventListener('click', this.handleWrapperInfoToggle)
   }
 
   handleUpdateButtonClick(event) {

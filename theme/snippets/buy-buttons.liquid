@@ -31,58 +31,7 @@
       data-product-id="{{ product.id }}"
     >
 
-    {% if settings.gift_wrap_product_page and product.tags contains 'Gift-wrapper' %}
-      <div class="product-gift-wrap ">
-        <div class="tw-flex tw-items-center tw-mb-4">
-          <input 
-            id="gift-wrap-checkbox" 
-            type="checkbox" 
-            class="!tw-w-6 !tw-h-6 tw-accent-black "
-            data-gift-id="{{ settings.gift_wrap_product.first_available_variant.id }}"
-          >
-          <label for="gift-wrap-checkbox" class="tw-font-medium">{{- settings.gift_wrap_message -}}</label>
-        </div>
-
-        <div class="form-group hidden tw-mb-4 tw-space-y-4  ">
-          <div class="tw-space-y-2">
-            <label for="gift-wrap-to" class=" tw-border-gray-300">To</label>
-            <input 
-              type="text" 
-              id="gift-wrap-to" 
-              maxlength="{{ settings.gift_wrap_to_max_length }}" 
-              placeholder="Enter recipient's name" 
-              required
-              class="tw-w-full tw-p-2 tw-font-medium tw-border  tw-focus-within:tw-outline-none tw-border-gray-300 tw-rounded-md  focus:outline-none"
-            >
-          </div>
-
-          <div class="tw-space-y-2">
-            <label for="gift-wrap-from" class="tw-font-medium ">From</label>
-            <input 
-              type="text" 
-              id="gift-wrap-from" 
-              maxlength="{{ settings.gift_wrap_from_max_length }}" 
-              placeholder="Enter your name" 
-              required
-              class="tw-w-full tw-p-2 tw-border tw-border-gray-300 tw-focus-within:tw-outline-none tw-rounded-md  focus:outline-none"
-            >
-          </div>
-
-          <div class="tw-space-y-2">
-            <label for="gift-wrap-message" class="tw-font-medium">Gift Wrap Message:</label>
-            <textarea 
-              id="gift-wrap-message" 
-              rows="4" 
-              maxlength="{{ settings.gift_wrap_message_max_length }}" 
-              placeholder="Enter a gift message" 
-              required
-              class="tw-w-full tw-focus-within:tw-outline-none tw-p-2 tw-border tw-border-gray-300 tw-rounded-md focus:outline-none"
-            ></textarea>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-    
+     {% render 'product-gift-wrap' %}
 
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <span class="svg-wrapper">

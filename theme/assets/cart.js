@@ -226,8 +226,8 @@ class CartItems extends HTMLElement {
         if (productId) {
         const associatedProductElement = document.querySelector(`[data-product-id="${productId}"]`);
         if (associatedProductElement) {
-          const productIndex = this.querySelector(`.asociated-product-${productId}`).dataset.index;
-          this.updateQuantity(productIndex, 0);
+          const giftProduct = this.querySelector(`.asociated-product-${productId}`);
+          this.updateQuantity(giftProduct.dataset.index, giftProduct.value > 1 ? giftProduct.value - 1 : 0);
         }
         }
 
@@ -301,8 +301,8 @@ class CartItems extends HTMLElement {
        if (productId) {
        const associatedProductElement = document.querySelector(`[data-product-id="${productId}"]`);
         if (associatedProductElement) {
-          const productIndex = this.querySelector(`.asociated-product-${productId}`).dataset.index;
-          this.updateQuantity(productIndex, 0);
+          const giftProduct = this.querySelector(`.asociated-product-${productId}`);
+          this.updateQuantity(giftProduct.dataset.index, giftProduct.value > 1 ? giftProduct.value - 1 : 0);
         }
        }
        else{

@@ -9,76 +9,67 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "rich_text_ngG8jC": {
+      "type": "rich-text",
       "blocks": {
-        "heading": {
+        "heading_enxxfw": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Product Gift-wrapping",
+            "heading_size": "h1"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_tW8maE": {
+          "type": "text",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Please <strong>navigate to  product page</strong> to explore the updated features. <br/>Note that the <strong>gift-wrapping functionality</strong> is available for select products only <br/>and is not offered for '<strong>The Hydrogen Snowboard</strong>' and '<strong>The Collection Snowboard</strong>'.</p>"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_enxxfw",
+        "text_tW8maE"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
+        "collection": "featured-collecitons",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "color_scheme": "scheme-2",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
+    "rich_text_ngG8jC",
     "featured_collection"
   ]
 }

@@ -17,7 +17,7 @@
             data-gift-id="{{ settings.gift_wrap_product.first_available_variant.id }}"
           >
            
-          <label for="wrapper-checkbox" class="tw-font-medium tw-cursor-pointer ">{{- settings.gift_wrap_message -}}</label>
+          <label for="wrapper-checkbox" class="tw-font-medium tw-cursor-pointer ">{{- settings.gift_wrap_message -}}({{ settings.gift_wrap_product.first_available_variant.price | money_without_trailing_zeros }})</label>
     </div>
       <div class="tw-flex tw-justify-end tw-items-center tw-gap-2">
         <div class="!tw-block tw-w-4 tw-h-4 tw-bg-orange-400 tw-rounded-full tw-animate-pulse"></div>

@@ -45,8 +45,8 @@ if (!customElements.get('product-form')) {
     formData.append('items[1][id]', this.giftWrapCheckbox.dataset.giftId); // Additional product
     formData.append('items[1][quantity]', 1);
     formData.append('items[1]properties[asociated_product]', this.dataset.productId);
-    formData.append('properties[gift_wrapp]', 'true'); // Example property for additional product
-    formData.append('properties[gift_from]', this.giftWrapFrom.value ); // Example property for additional product
+    formData.append('properties[gift_wrapp]', 'true'); 
+    formData.append('properties[gift_from]', this.giftWrapFrom.value );
     formData.append('properties[gift_to]', this.giftWrapTo.value);
     formData.append('properties[gift_massage]', this.giftWrapMassage.value);
    }
@@ -63,15 +63,9 @@ if (!customElements.get('product-form')) {
 
     config.body = formData;
 
-    
-    for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-    }
-
     fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
-            console.log('Response:', response); // Log the response
             if (response.status) {
                 publish(PUB_SUB_EVENTS.cartError, {
                     source: 'product-form',

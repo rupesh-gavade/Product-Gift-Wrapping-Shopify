@@ -427,7 +427,7 @@
                           </quantity-popover>
                         </td>
 
-                         {% if  settings.gift_wrap_product_page and item.properties.gift_wrapp %}
+                         {% if  settings.gift_wrap_product_page and item.properties.gift_wrapp  == 'true'%}
                            <td class="cart-item-gift-wrap tw-col-start-1 tw-col-end-5 !tw-p-5  color-{{ settings.gift_wrap_cart_drawer_color_scheme  }}" role="row">
                              {% render 'cart-item-gift-wrap-update', item:item  , index:forloop.index%}
                            </td>

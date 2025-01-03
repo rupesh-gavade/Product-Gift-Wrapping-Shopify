@@ -12,7 +12,7 @@ if (!customElements.get('product-form')) {
         this.submitButton = this.querySelector('[type="submit"]');
         this.submitButtonText = this.submitButton.querySelector('span');
 
-        // gift wrap inpu variabls 
+        // gift wrap input variabls 
         this.giftWrapCheckbox = this.querySelector('#wrapper-checkbox');
         this.giftWrapFrom = this.querySelector('#gift-wrapper-from');
         this.giftWrapTo = this.querySelector('#gift-wrapper-to');
@@ -42,7 +42,7 @@ if (!customElements.get('product-form')) {
 
     // Append an additional product to the cart
    if (this.giftWrapCheckbox.checked) {
-    formData.append('items[1][id]', this.giftWrapCheckbox.dataset.giftId); // Additional product
+    formData.append('items[1][id]', this.giftWrapCheckbox.dataset.giftId);
     formData.append('items[1][quantity]', 1);
     formData.append('items[1]properties[asociated_product]', this.dataset.productId);
     formData.append('properties[gift_wrapp]', 'true'); 
@@ -66,6 +66,7 @@ if (!customElements.get('product-form')) {
     fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
+            console.log('Response:', response); // Log the response
             if (response.status) {
                 publish(PUB_SUB_EVENTS.cartError, {
                     source: 'product-form',
@@ -111,12 +112,15 @@ if (!customElements.get('product-form')) {
             }
         })
         .catch((e) => {
-            console.error('Fetch Error:', e); // Log any fetch error
+            console.error('Fetch Error:', e); 
         })
         .finally(() => {
             this.submitButton.classList.remove('loading');
             if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
+            this.querySelectorAll('input, textarea, #wrapper-checkbox').forEach((element) =>
+                element.type === 'checkbox' ? (element.checked = false) : (element.value = "")
+            );
             this.querySelector('.loading__spinner').classList.add('hidden');
         });
 }

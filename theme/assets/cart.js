@@ -333,7 +333,7 @@ class CartItemGiftUpdate extends HTMLElement {
 
 
     this.handleCheckboxChnage = this.handleCheckboxChnage.bind(this);
-    this.checkBox.addEventListener('change', this.handleCheckboxChnage);  // Fixed this line
+    this.checkBox.addEventListener('change', this.handleCheckboxChnage); 
 
     this.handleUpdateButtonClick = this.handleUpdateButtonClick.bind(this);
     this.updateButton.addEventListener('click', this.handleUpdateButtonClick);
@@ -343,9 +343,9 @@ class CartItemGiftUpdate extends HTMLElement {
   handleUpdateButtonClick(event) {
     event.preventDefault();
     const line = this.dataset.line;
-    const toName = this.querySelector('input[name="wrapper-to"]').value;  // Recipient's name
-    const fromName = this.querySelector('input[name="wrapper-from"]').value;  // Sender's name
-    const giftMessage = this.querySelector('textarea[name="wrapper-message"]').value;  // Gift message
+    const toName = this.querySelector('input[name="wrapper-to"]').value; 
+    const fromName = this.querySelector('input[name="wrapper-from"]').value; 
+    const giftMessage = this.querySelector('textarea[name="wrapper-message"]').value;
     const properties = {
       gift_wrapp:'ture',
       gift_from: toName,
@@ -359,29 +359,24 @@ class CartItemGiftUpdate extends HTMLElement {
     }
   }
 
-  handleCheckboxChnage(event) {
-    // Removed event.preventDefault() unless necessary
+   handleCheckboxChnage(event) {
     const line = this.dataset.line;
-    const properties = {};
-
+    const properties = {
+      gift_wrapp:'',
+      gift_from: '',
+      gift_to: '',
+      gift_massage: ''
+    };
     const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
     
     if (cartItems) {
       cartItems.updateLineItemProperties(line, properties, this.dataset.productId);
     }
   }
-  handleWrapperInfoToggle(){
-    this.classList.toggle('active')
-    this.wrapperFormGroup.classList.toggle('hidden')
-    this.wrapperEditButton.classList.toggle('hidden')
-    this.wrapperCloseButton .classList.toggle('hidden')
-  }
 }
-
+ 
 
 customElements.define('cart-item-gift-wrapper', CartItemGiftUpdate);
-
-
 
 
 if (!customElements.get('cart-note')) {
